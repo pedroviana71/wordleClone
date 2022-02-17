@@ -1,33 +1,18 @@
+// --------- Consts to interact with the page ---------------
 const main = document.querySelector(".main");
 const keyboard = document.querySelector(".keyboard");
 const correct = document.querySelector(".correct");
-let clean = "";
 
+// --------- Start variables --------------
+let clean = "";
 let line = 0;
 let character = 0;
 let control = 0;
-
+let controlCleanRight = false;
+let controlCleanWrong = false;
 let randomNumber = Math.floor(Math.random() * 1320);
-let word = escolhas[randomNumber];
-let result = word.toUpperCase().split("");
-console.log(result);
-
-const right = ["Acertou"];
 const wrong = ["Errou"];
-
-const functionRight = () => {
-  right.forEach((right) => {
-    const divi = document.createElement("div");
-    divi.textContent = right;
-    divi.setAttribute("id", "right");
-    correct.append(divi);
-  });
-};
-
-const removeFunctionRight = () => {
-  clean.parentNode.removeChild(clean);
-};
-
+const right = ["Acertou"];
 const keys = [
   "Q",
   "W",
@@ -58,7 +43,6 @@ const keys = [
   "M",
   "ENT",
 ];
-
 const lines = [
   ["", "", "", "", ""],
   ["", "", "", "", ""],
@@ -68,6 +52,39 @@ const lines = [
   ["", "", "", "", ""],
 ];
 
+// Choice of random word
+let word = escolhas[randomNumber];
+let result = word.toUpperCase().split("");
+console.log(result);
+
+// ---------- Functions to make a div if the usar anwsers rigth or wrong -------------
+const functionRight = () => {
+  right.forEach((right) => {
+    const divi = document.createElement("div");
+    divi.textContent = right;
+    divi.setAttribute("id", "animate__fadeInDown");
+    correct.append(divi);
+  });
+};
+
+const functionWrong = () => {
+  wrong.forEach((wrong) => {
+    const divi = document.createElement("div");
+    divi.textContent = wrong;
+    divi.setAttribute("id", "animate__fadeInDown");
+    correct.append(divi);
+  });
+};
+
+const removeFunctionRight = () => {
+  clean.parentNode.removeChild(clean);
+};
+
+const removeFunctionWrong = () => {
+  clean.parentNode.removeChild(clean);
+};
+
+// --------- forEach to make the keyboard -----------
 keys.forEach((key) => {
   const btn = document.createElement("button");
   btn.textContent = key;
@@ -85,10 +102,12 @@ keys.forEach((key) => {
   keyboard.append(btn);
 });
 
-const handleClick = (key) => {  
+// ----------- handleClick to interact with the click in the key --------------
+const handleClick = (key) => {
   addLetter(key);
 };
 
+// ----------- forEach to make each word divs --------------
 lines.forEach((word, indexWord) => {
   const div = document.createElement("div");
   div.setAttribute("class", "container_input");
@@ -102,8 +121,17 @@ lines.forEach((word, indexWord) => {
   });
 });
 
+// ------------ Function of rules for adding letters and deleting them -----------------
 const addLetter = (key) => {
   let letter = document.getElementById("word-" + line + "-letter-" + character);
+  if (controlCleanRight) {
+    removeFunctionRight();
+    controlCleanRight = false;
+  }
+  if (controlCleanWrong) {
+    removeFunctionWrong();
+    controlCleanWrong = false;
+  }
 
   if (key === "DEL") {
     if (line > 0 && character > 0) {
@@ -137,33 +165,40 @@ const addLetter = (key) => {
   }
 
   if (key === "ENT") {
+    console.log(lines);
     let empty = 0;
     for (let i = 0; i <= 4; i++) {
       if (result[i] === lines[line][i]) {
+        let addClass = document.getElementById("word-" + line + "-letter-" + i);
+        addClass.classList.add("animate__bounceIn");
         control += 1;
       }
       if (!lines[line][i]) {
         empty += 1;
-        console.log(empty);
+      }
+      let check = lines[line][i];
+      let index = result.indexOf(check);
+      if (index > -1) {
+        let addClass = document.getElementById("word-" + line + "-letter-" + i);
+        addClass.classList.add("contain");
       }
     }
     if (control < 5 && empty === 0) {
-      wrong.forEach((wrong) => {
-        const divi = document.createElement("div");
-        divi.textContent = wrong;
-        correct.append(divi);
-      });
       line++;
       character = 0;
       control = 0;
+      functionWrong();
+      clean = document.getElementById("animate__fadeInDown");
+      controlCleanWrong = true;
     }
 
-    if (control === 5 && empty === 0) {      
+    if (control === 5 && empty === 0) {
       line++;
       character = 0;
       control = 0;
       functionRight();
-      clean = document.getElementById("right");
+      clean = document.getElementById("animate__fadeInDown");
+      controlCleanRight = true;
     }
 
     return;
