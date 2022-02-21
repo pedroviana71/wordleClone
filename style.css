@@ -66,9 +66,9 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
-  font-size: 38px;
+  width: 50px;
+  height: 50px;
+  font-size: 32px;
   margin: 0px 5px 0px 5px;
   border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
@@ -81,7 +81,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 380px;
+  width: 360px;
   flex-wrap: wrap;
 }
 .container_letter {
@@ -92,13 +92,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 32px;
+  width: 30px;
   height: 45px;
   border: 0;
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
-  font-size: 25px;
+  font-size: 20px;
   color: rgb(0, 21, 53);
   margin: 2px;
 }
@@ -110,7 +110,7 @@ main {
   border: 0;
   border-radius: 5px;
   font-size: 20px;
-  color: rgb(3, 0, 155);
+  color: rgb(163, 0, 0);
   cursor: pointer;
 }
 
@@ -120,13 +120,28 @@ main {
   background-color: rgb(255, 255, 255);
   border: 0;
   border-radius: 5px;
-  font-size: 25px;
-  color: rgb(3, 0, 155);
+  font-size: 20px;
+  color: rgb(3, 102, 0);
   
   cursor: pointer;
 }
 .correct{  
   height: 32px;
+}
+#A{
+  margin-left: 10px;
+}
+#Q{
+  margin-left: 15px;
+}
+#right{
+  color: rgb(0, 192, 16);
+}
+#wrong{
+  color: rgb(206, 0, 0)
+}
+#exist{
+  color: white
 }
 
 @media only screen and (min-width: 740px){
@@ -226,5 +241,11 @@ main {
 }
 .correct{  
   height: 32px;
+}
+#right{
+  color: white;
+}
+#wrong{
+  color: white
 }
 }
