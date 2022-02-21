@@ -197,7 +197,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  width: 620px;
   flex-wrap: wrap;
 }
 .container_letter {
@@ -205,8 +205,8 @@ main {
 }
 
 .letter {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: 0;
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
@@ -218,7 +218,7 @@ main {
 }
 
 .delete {
-  height: 60px;
+  height: 50px;
   width: 70px;
   background-color: rgb(255, 255, 255);
   border: 0;
@@ -229,7 +229,7 @@ main {
 }
 
 .enter {
-  height: 60px;
+  height: 50px;
   width: 100px;
   background-color: rgb(255, 255, 255);
   border: 0;
@@ -246,6 +246,22 @@ main {
   color: white;
 }
 #wrong{
+  color: white
+}
+
+#A{
+  margin-left: 0px;
+}
+#Q{
+  margin-left: 0px;
+}
+#right{
+  color: rgb(0, 192, 16);
+}
+#wrong{
+  color: rgb(206, 0, 0)
+}
+#exist{
   color: white
 }
 }
