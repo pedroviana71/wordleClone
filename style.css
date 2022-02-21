@@ -98,35 +98,35 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25px;
-  height: 25px;
+  width: 32px;
+  height: 45px;
   border: 0;
   border-radius: 5px;
   background-color: rgb(74, 110, 145);
   cursor: pointer;
-  font-size: 18px;
+  font-size: 25px;
   color: rgb(31, 31, 31);
-  margin: 5px;
+  margin: 2px;
 }
 
 .delete {
-  height: 30px;
+  height: 45px;
   width: 40px;
   background-color: rgb(224, 115, 115);
   border: 0;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 25px;
   color: rgb(31, 31, 31);
   cursor: pointer;
 }
 
 .enter {
-  height: 30px;
+  height: 45px;
   width: 60px;
   background-color: rgb(115, 247, 144);
   border: 0;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 25px;
   color: rgb(31, 31, 31);
   
   cursor: pointer;
