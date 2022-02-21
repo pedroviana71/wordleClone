@@ -7,13 +7,7 @@
 }
 
 body {
-  background: rgb(88, 161, 117);
-  background: linear-gradient(
-    90deg,
-    rgba(88, 161, 117, 1) 0%,
-    rgba(175, 241, 255, 1) 100%,
-    rgba(0, 212, 255, 0) 100%
-  );
+  background: rgb(0, 21, 53);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +51,7 @@ main {
   justify-content: center;
   width: 100%;
   font-size: 48px;  
-  color: rgb(41, 40, 40);
+  color: rgb(255, 255, 255);
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0);
 }
 
@@ -76,11 +70,11 @@ main {
   height: 60px;
   font-size: 38px;
   margin: 0px 5px 0px 5px;
-  border: 4px solid rgb(55, 99, 139);
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
   outline: none;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.048);
-  background-color: rgba(143, 143, 143, 0.288);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.048);  
+  color: white;
 }
 
 .keyboard {
@@ -102,32 +96,32 @@ main {
   height: 45px;
   border: 0;
   border-radius: 5px;
-  background-color: rgb(74, 110, 145);
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
   font-size: 25px;
-  color: rgb(31, 31, 31);
+  color: rgb(0, 21, 53);
   margin: 2px;
 }
 
 .delete {
   height: 45px;
   width: 40px;
-  background-color: rgb(224, 115, 115);
+  background-color: rgb(255, 255, 255);
   border: 0;
   border-radius: 5px;
-  font-size: 25px;
-  color: rgb(31, 31, 31);
+  font-size: 20px;
+  color: rgb(3, 0, 155);
   cursor: pointer;
 }
 
 .enter {
   height: 45px;
   width: 60px;
-  background-color: rgb(115, 247, 144);
+  background-color: rgb(255, 255, 255);
   border: 0;
   border-radius: 5px;
   font-size: 25px;
-  color: rgb(31, 31, 31);
+  color: rgb(3, 0, 155);
   
   cursor: pointer;
 }
@@ -158,8 +152,8 @@ main {
   justify-content: center;
   width: 100%;
   font-size: 48px;  
-  color: rgb(41, 40, 40);
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0);
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.13);
 }
 
 /* ---------CSS inputs and keyboard---------- */
@@ -177,11 +171,11 @@ main {
   height: 60px;
   font-size: 38px;
   margin: 0px 5px 0px 5px;
-  border: 4px solid rgb(55, 99, 139);
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
   outline: none;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.048);
-  background-color: rgba(143, 143, 143, 0.288);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.048);  
+  color: rgb(255, 253, 254);
 }
 
 .keyboard {
@@ -200,32 +194,33 @@ main {
   height: 60px;
   border: 0;
   border-radius: 5px;
-  background-color: rgb(74, 110, 145);
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
   font-size: 28px;
-  color: rgb(31, 31, 31);
+  color: rgb(0, 21, 53);
   margin: 5px;
+  border: 2px solid rgb(255, 255, 255)
 }
 
 .delete {
   height: 60px;
   width: 70px;
-  background-color: rgb(224, 115, 115);
+  background-color: rgb(255, 255, 255);
   border: 0;
   border-radius: 5px;
   font-size: 28px;
-  color: rgb(31, 31, 31);
+  color: rgb(0, 35, 192);
   cursor: pointer;
 }
 
 .enter {
   height: 60px;
   width: 100px;
-  background-color: rgb(115, 247, 144);
+  background-color: rgb(255, 255, 255);
   border: 0;
   border-radius: 5px;
   font-size: 28px;
-  color: rgb(31, 31, 31);
+  color: rgb(0, 35, 192);
   
   cursor: pointer;
 }

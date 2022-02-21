@@ -71,6 +71,8 @@ const functionRight = () => {
   });
 };
 
+
+
 const functionWrong = () => {
   wrong.forEach((wrong) => {
     const divi = document.createElement("div");
