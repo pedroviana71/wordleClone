@@ -125,14 +125,10 @@ main {
   border-radius: 5px;
   font-size: 28px;
   color: rgb(31, 31, 31);
+  
   cursor: pointer;
 }
 .correct{  
   height: 32px;
 }
-.contain{
-  background-color: rgb(255, 255, 121);
-}
-.animate__bounceIn{
-  background-color: rgb(130, 255, 130);
-}
+
