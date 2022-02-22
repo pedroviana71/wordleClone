@@ -143,7 +143,13 @@ main {
 #exist {
   color: white;
 }
+.key_yellow {
+  background-color: #c6b100;
+}
 
+.key_green {
+  background-color: #1a7600;
+}
 @media only screen and (min-width: 740px) {
   .btn_help {
     display: flex;
@@ -264,10 +270,10 @@ main {
     color: white;
   }
   .key_yellow {
-    background-color: #C6B100;
+    background-color: #c6b100;
   }
 
   .key_green {
-    background-color: #1A7600;
+    background-color: #1a7600;
   }
 }
