@@ -66,7 +66,7 @@ let answer = word
   .replace(/[\u0300-\u036f]/g, "")
   .toUpperCase()
   .split("");
-console.log(answer);
+
 
 // ---------- Functions to make a div if the usar anwsers rigth or wrong -------------
 const functionRight = () => {
@@ -155,7 +155,7 @@ const deleteLetter = () => {
   }
 };
 
-const enterLetter = () => {
+const enterLetter = (key) => {
   let empty = 0;
   controlWord = false;
 
@@ -168,12 +168,18 @@ const enterLetter = () => {
     if (index >= 0) {
       let addClass = document.getElementById("word-" + line + "-letter-" + i);
       addClass.classList.add("contain");
+      let valueAddCLass = addClass.textContent;
+      let addClassKey = document.getElementById(`${valueAddCLass}`);
+      addClassKey.classList.add("key_yellow");
     }
     if (answer[i] === lines[line][i]) {
       let addClass = document.getElementById("word-" + line + "-letter-" + i);
       addClass.classList.remove("contain");
       addClass.classList.add("animate__bounceIn");
       control += 1;
+      let valueAddCLass = addClass.textContent;
+      let addClassKey = document.getElementById(`${valueAddCLass}`);
+      addClassKey.classList.add("key_green");
     }
   }
 
@@ -188,6 +194,9 @@ const enterLetter = () => {
 
     for (let i = 0; i < addStylesRight.length; i++) {
       addStylesRight[i].style.backgroundColor = "#1A7600";
+    }
+    if (line > 5) {
+      alert(`Game over. Resposta: ${answer.join("")}`);
     }
   }
 
@@ -239,25 +248,25 @@ const addLetter = (key) => {
   //Deleting div "errou"
   if (controlCleanWrong) {
     removeFunctionWrong();
-    controlCleanWrong = false
+    controlCleanWrong = false;
   }
 
   if (doNotExist && key != "ENT") {
     document.getElementById("exist").remove();
     doNotExist = false;
   }
-  
+
   //Deleting characters
   if (key === "DEL" && isRight === false) {
     deleteLetter();
   }
   //Enter
-  if (key === "ENT" && controlWord ) {
-    enterLetter();
-  }  
+  if (key === "ENT" && controlWord) {
+    enterLetter(key);
+  }
 
   //Adding letters
-  if (key != "ENT" && key != "DEL" && isRight === false ) {
+  if (key != "ENT" && key != "DEL" && isRight === false) {
     letter.textContent = key;
     lines[line][character] = key;
     character++;
@@ -268,17 +277,19 @@ const addLetter = (key) => {
       y += 1;
       controlWord = true;
     }
-    if (!wordsToWrite.includes(lines[y].join("").toLowerCase())  &&
-      lines[y].join("").toLowerCase().length >= 5 && key ==="ENT"
+    if (
+      !wordsToWrite.includes(lines[y].join("").toLowerCase()) &&
+      lines[y].join("").toLowerCase().length >= 5 &&
+      key === "ENT"
     ) {
       doNotExist = true;
-      if(k === 5 && !document.getElementById("exist")){
+      if (k === 5 && !document.getElementById("exist")) {
         functionExist();        
       }
     }
   }
 
-  //Verifying accents 
+  //Verifying accents
   for (let k = 0; k <= 5; k++) {
     if (wordsToWrite.includes(lines[y].join("").toLowerCase())) {
       y += 1;
